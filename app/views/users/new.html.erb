@@ -1,0 +1,11 @@
+<h1>Welcome to Auction Stuff! </h1>
+<p>
+	Sign up!<br>
+	<%= form_for @user do |f| %>
+  <%= f.label :email %>:
+  <%= f.text_field :email %><br />
+
+
+  <%= f.submit %>
+<% end %>
+</p>

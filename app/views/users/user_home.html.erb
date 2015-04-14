@@ -1,0 +1,12 @@
+<h1> Welcome, <%= @user.email %> </h1>
+<p>
+<%= link_to('View your Items',user_items_path(user_id:params[:id])) %>
+</p>
+<p>
+<%= link_to('Add new item',new_user_item_path(user_id:params[:id])) %>
+</p>
+
+<h3>Your recent bids: </h3>
+<% @user.bids.each do |bid| %>
+<%= link_to(bid.item.name, user_item_path(user_id:params[:id])) %><br>
+<% end %>

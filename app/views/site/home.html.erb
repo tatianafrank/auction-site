@@ -1,0 +1,21 @@
+<h1> Welcome to your favorite auction site! </h1>
+<hr>
+<p>
+Already a user? <br>
+<%= link_to('Login', login_path) %>
+</p>
+<hr>
+<p>
+New user? <br>
+<p>
+	Sign up!<br>
+	<%= form_for @user do |f| %>
+  <%= f.label :email %>:
+  <%= f.text_field :email %><br />
+
+
+  <%= f.submit %>
+<% end %>
+</p>
+</p>
+<hr>

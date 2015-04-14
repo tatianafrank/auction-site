@@ -1,0 +1,34 @@
+<% if flash[:notice] %>
+	<%= flash[:notice] %>
+<%else %>
+<%=flash[:error]%>
+<% end %>
+
+<% @user.items.each do |item| %>
+
+<h1> <%= item.name %> </h1>
+<hr>
+<p>
+<%= item.latest_price %>
+</p>
+<p>
+Auction ends: <%= item.expiration %>
+</p>
+<p>
+About this item: <%= item.description %>
+</p>
+<% end %>
+<p>
+<%= link_to('Back to items', user_items_path(user_id: session[:user_id])) %>
+</p>
+
+
+	Enter your bid<br>
+	<%= form_for [@item, @bid] do |f| %>
+  <%= f.label :bid %>:
+  <%= f.text_field :amount %><br />
+
+
+  <%= f.submit %>
+<% end %>
+
